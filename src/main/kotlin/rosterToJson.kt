@@ -73,7 +73,7 @@ lateinit var formulaEvaluator: FormulaEvaluator
 fun Cell.readString(): String {
     if (this.cellType == CellType.NUMERIC && DateUtil.isCellDateFormatted(this)) {
         val date = this.dateCellValue
-        return "${months[date.month]} ${date.day}${getOrdinal(date.day)}, ${date.year + 1900}"
+        return "${months[date.month]} ${date.date}${getOrdinal(date.day)}, ${date.year + 1900}"
     }
     return dataFormatter.formatCellValue(this, formulaEvaluator)
 }
